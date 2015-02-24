@@ -1,11 +1,11 @@
 {
-    "name": "Aurelienazerty/logo",
+    "name": "Aurelienazerty/styleTA",
     "type": "phpbb-extension",
-    "description": "Modification du logo.",
+    "description": "Modification du style du forum (logo, pleine largeur)",
     "homepage": "http://www.team-azerty.com",
     "version": "1.0.0",
     "time": "2015-02-22",
-		"keywords": ["phpbb", "extension", "logo"],
+		"keywords": ["phpbb", "extension", "logo", "style", "Team-Azerty"],
     "license": "GPL-2.0",
     "authors": [
         {
@@ -18,7 +18,7 @@
         "php": ">=5.3.3"
     },
    "extra": {
-        "display-name": "Logo TA",
+        "display-name": "Style Team-Azerty",
         "soft-require": {
             "phpbb/phpbb": "3.1.*"
         }
