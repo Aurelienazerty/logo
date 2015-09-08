@@ -1,0 +1,8 @@
+services:
+    Aurelienazerty.DisplayLastPost.listener:
+        class: Aurelienazerty\styleTA\event\listener
+        arguments:
+            - @dbal.conn
+            - @config
+        tags:
+            - { name: event.listener }
