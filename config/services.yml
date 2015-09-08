@@ -4,5 +4,6 @@ services:
         arguments:
             - @dbal.conn
             - @config
+            - @user
         tags:
             - { name: event.listener }
