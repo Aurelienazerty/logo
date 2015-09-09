@@ -3,7 +3,7 @@ services:
         class: Aurelienazerty\styleTA\event\listener
         arguments:
             - @dbal.conn
-            - @config
+            - @template
             - @user
         tags:
             - { name: event.listener }
