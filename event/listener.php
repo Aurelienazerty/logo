@@ -20,9 +20,9 @@ class listener implements EventSubscriberInterface
 	
 	/** @var \phpbb\db\driver\driver_interface */
 	protected $db;
-
-	/** @var \phpbb\config\config */
-	protected $config;
+	
+	/** @var \phpbb\template\template */
+	protected $template;
 
 	/** @var \phpbb\user $user */
 	protected $user;
@@ -39,10 +39,10 @@ class listener implements EventSubscriberInterface
 	 * @return \Aurelienazerty\styleTA\event\listener
 	 * @access public
 	 */
-	public function __construct(\phpbb\db\driver\driver_interface $db, \phpbb\config\config $config, \phpbb\user $user)
+	public function __construct(\phpbb\db\driver\driver_interface $db, \phpbb\template\template $template, \phpbb\user $user)
 	{
 		$this->user = $user;
-		$this->config = $config;
+		$this->template = $template;
 		$this->db = $db;
 	}
 
@@ -60,11 +60,11 @@ class listener implements EventSubscriberInterface
 				'FROM'		=> array(
 					'user_site_pref'	=> 'u',
 				),
-				'WHERE' => 'u.user_id = ' . (int) $user['user_id'],
+				'WHERE' => 'u.user_id = ' . (int) $this->user->data["user_id"],
 		);
 		$sql = $this->db->sql_build_query('SELECT', $sql_array);
-		$result = $this->db->sql_query_limit($sql, 1, 1);
+		$result = $this->db->sql_query($sql);
 		$pub = $this->db->sql_fetchrow($result)['publicite'];
-		$this->template->assign_var('DISPLAY_PUB', $pub == 'y');
+		$this->template->assign_var('DISPLAY_PUB', ($pub == 'y'));
 	}
 }
