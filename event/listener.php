@@ -66,5 +66,7 @@ class listener implements EventSubscriberInterface
 		$result = $this->db->sql_query($sql);
 		$pub = $this->db->sql_fetchrow($result)['publicite'];
 		$this->template->assign_var('DISPLAY_PUB', ($pub == 'y'));
+		
+		$this->template->assign_var('IS_MOBILE', $_SESSION['isMobile']);
 	}
 }

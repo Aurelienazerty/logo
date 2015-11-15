@@ -1,5 +1,5 @@
 services:
-    Aurelienazerty.DisplayLastPost.listener:
+    Aurelienazerty.styleTA.listener:
         class: Aurelienazerty\styleTA\event\listener
         arguments:
             - @dbal.conn
