@@ -3,9 +3,9 @@
     "type": "phpbb-extension",
     "description": "Modification du style du forum (logo, pleine largeur)",
     "homepage": "http://www.team-azerty.com",
-    "version": "1.0.0",
-    "time": "2015-02-22",
-		"keywords": ["phpbb", "extension", "logo", "style", "Team-Azerty"],
+    "version": "1.1.0",
+    "time": "2016-06-07",
+		"keywords": ["phpbb", "extension", "logo", "style", "Team-Azerty", "publicité"],
     "license": "GPL-2.0",
     "authors": [
         {

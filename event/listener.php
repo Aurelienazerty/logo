@@ -50,23 +50,37 @@ class listener implements EventSubscriberInterface
 	{
 		return array(
 			'core.page_footer'		=> 'ajout_publicite',
+			'core.user_setup' 		=> 'load_language_on_setup',
 		);
+	}
+	
+	public function load_language_on_setup($event)
+	{
+		$lang_set_ext = $event['lang_set_ext'];
+		$lang_set_ext[] = array(
+			'ext_name' => 'Aurelienazerty/styleTA',
+			'lang_set' => 'langues',
+		);
+		$event['lang_set_ext'] = $lang_set_ext;
 	}
 	
 	public function ajout_publicite($event)
 	{
 		$sql_array = array(
-			'SELECT'	=> 'u.publicite',
+			'SELECT'	=> 'u.valeur',
 				'FROM'		=> array(
-					'user_site_pref'	=> 'u',
+					'user_pref'	=> 'u',
+					'user_pref_type' => 'p', 
 				),
-				'WHERE' => 'u.user_id = ' . (int) $this->user->data["user_id"],
+				'WHERE' => 
+					'u.user_id = ' . (int) $this->user->data["user_id"] . 
+					' AND u.user_pref_type_id = p.user_pref_type_id' .
+					' AND input_name = "publicite"',
 		);
 		$sql = $this->db->sql_build_query('SELECT', $sql_array);
 		$result = $this->db->sql_query($sql);
-		$pub = $this->db->sql_fetchrow($result)['publicite'];
+		$sql_fetchrow = $this->db->sql_fetchrow($result);
+		$pub = $sql_fetchrow['valeur'];
 		$this->template->assign_var('DISPLAY_PUB', ($pub == 'y'));
-		
-		$this->template->assign_var('IS_MOBILE', $_SESSION['isMobile']);
 	}
 }

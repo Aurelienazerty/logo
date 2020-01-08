@@ -1,18 +1,73 @@
-.imageset.site_logo {
-	background-image: url("/images/divers/logo.png");
-	padding-left: 250px;
+@font-face {
+  font-family: 'EthnocentricRg-Regular';
+  src: url('/include/fonts/ethnocentric/ethnocentric.eot'); /* IE9 Compat Modes */
+  src: url('/include/fonts/ethnocentric/ethnocentric.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('/include/fonts/ethnocentric/ethnocentric.otf') format('opentype'), /* Open Type Font */
+    url('/include/fonts/ethnocentric/ethnocentric.svg') format('svg'), /* Legacy iOS */
+    url('/include/fonts/ethnocentric/ethnocentric.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('/include/fonts/ethnocentric/ethnocentric.woff') format('woff'), /* Modern Browsers */
+    url('/include/fonts/ethnocentric/ethnocentric.woff2') format('woff2'); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+.imageset.site_logo, .site_logo {
+	background-image: url("/images/divers/logo-2019-blanc.png");
+	/*padding-left: 250px;
 	padding-top: 100px;
+	*/
+	height: 102px;
+	width: 560px;
+	background-repeat: no-repeat;
+}
+
+.darkmode .site_logo {
+  filter: invert(1) hue-rotate(.5turn);
+}
+
+.site-description h1, .site-description p {
+	visibility: hidden;	
+}
+
+@media (max-width: 700px) {
+	.site-description h1 {
+		visibility: visible;
+		font-family: 'EthnocentricRg-Regular', Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+	}
+}
+
+.logo {
+	padding: 0;
 }
 #wrap {
 	max-width: 94% !important;	
+}
+
+#format-buttons .button-secondary {
+	display: none;
+}
+
+.postbody img.postimage {
+	max-height: 100%;
+}
+
+.cookieAcceptBox {
+  background-color: #f5f5f5 !important;
+  box-shadow: 1px 1px 5px 0px #575757 !important;
+  max-width: 94% !important;
+  opacity: initial !important;
+}
+
+.cookieAcceptBox a {
+  background-color: #3b5d87 !important;
+  border-radius: 3px !important;
+  margin-left: 15px !important;
+  padding: 4px 10px !important;
+  display: inline-block !important;
 }
 
 @media only screen and (max-width:700px), @media only screen and (max-device-width:700px) {
 	#wrap {
 		max-width: 100% !important;	
 	}
-}
-
-#publiciteAdsence {
-	text-align: center;
 }

@@ -2,8 +2,8 @@ services:
     Aurelienazerty.styleTA.listener:
         class: Aurelienazerty\styleTA\event\listener
         arguments:
-            - @dbal.conn
-            - @template
-            - @user
+            - '@dbal.conn'
+            - '@template'
+            - '@user'
         tags:
             - { name: event.listener }
