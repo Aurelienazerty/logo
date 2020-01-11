@@ -1,5 +1,5 @@
 {
-    "name": "Aurelienazerty/styleTA",
+    "name": "aurelienazerty/styleta",
     "type": "phpbb-extension",
     "description": "Modification du style du forum (logo, pleine largeur)",
     "homepage": "http://www.team-azerty.com",
@@ -9,7 +9,7 @@
     "license": "GPL-2.0",
     "authors": [
         {
-            "name": "Aurelienazerty",
+            "name": "aurelienazerty",
             "homepage": "http://www.team-azerty.com",
             "role": "Developer"
         }

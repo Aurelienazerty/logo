@@ -1,6 +1,6 @@
 services:
-    Aurelienazerty.styleTA.listener:
-        class: Aurelienazerty\styleTA\event\listener
+    aurelienazerty.styleta.listener:
+        class: aurelienazerty\styleta\event\listener
         arguments:
             - '@dbal.conn'
             - '@template'

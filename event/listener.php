@@ -8,7 +8,7 @@
  *
  */
 
-namespace Aurelienazerty\styleTA\event;
+namespace aurelienazerty\styleta\event;
 
 /**
  * Event listener
@@ -36,7 +36,7 @@ class listener implements EventSubscriberInterface
 	 * @param \phpbb\db\driver\driver_interface    $db               DBAL object
 	 * @param \phpbb\config\config	$config	Config object
 	 * @param \phpbb\user	$user	user object
-	 * @return \Aurelienazerty\styleTA\event\listener
+	 * @return \aurelienazerty\styleta\event\listener
 	 * @access public
 	 */
 	public function __construct(\phpbb\db\driver\driver_interface $db, \phpbb\template\template $template, \phpbb\user $user)
@@ -58,7 +58,7 @@ class listener implements EventSubscriberInterface
 	{
 		$lang_set_ext = $event['lang_set_ext'];
 		$lang_set_ext[] = array(
-			'ext_name' => 'Aurelienazerty/styleTA',
+			'ext_name' => 'aurelienazerty/styleta',
 			'lang_set' => 'langues',
 		);
 		$event['lang_set_ext'] = $lang_set_ext;
