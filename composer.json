@@ -2,7 +2,7 @@
     "name": "aurelienazerty/styleta",
     "type": "phpbb-extension",
     "description": "Modification du style du forum (logo, pleine largeur)",
-    "homepage": "http://www.team-azerty.com",
+    "homepage": "https://www.team-azerty.com",
     "version": "1.1.0",
     "time": "2016-06-07",
 		"keywords": ["phpbb", "extension", "logo", "style", "Team-Azerty", "publicité"],
@@ -10,7 +10,7 @@
     "authors": [
         {
             "name": "aurelienazerty",
-            "homepage": "http://www.team-azerty.com",
+            "homepage": "https://www.team-azerty.com",
             "role": "Developer"
         }
     ],

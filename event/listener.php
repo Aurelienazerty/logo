@@ -13,6 +13,10 @@ namespace aurelienazerty\styleta\event;
 /**
  * Event listener
  */
+
+use phpbb\db\driver\driver_interface;
+use phpbb\template\template;
+use phpbb\user;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class listener implements EventSubscriberInterface
@@ -30,15 +34,14 @@ class listener implements EventSubscriberInterface
 	/** @var int */
 	private $last_post_id;
 
-	/**
-	 * Constructor
-	 *
-	 * @param \phpbb\db\driver\driver_interface    $db               DBAL object
-	 * @param \phpbb\config\config	$config	Config object
-	 * @param \phpbb\user	$user	user object
-	 * @return \aurelienazerty\styleta\event\listener
-	 * @access public
-	 */
+    /**
+     * Constructor
+     *
+     * @param driver_interface $db DBAL object
+     * @param template $template
+     * @param user $user user object
+     * @access public
+     */
 	public function __construct(\phpbb\db\driver\driver_interface $db, \phpbb\template\template $template, \phpbb\user $user)
 	{
 		$this->user = $user;
