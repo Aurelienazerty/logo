@@ -49,6 +49,7 @@
 
 .postbody img.postimage {
 	max-height: 100%;
+	max-width: 600px;
 }
 
 .cookieAcceptBox {
